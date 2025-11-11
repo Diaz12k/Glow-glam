@@ -1,0 +1,526 @@
+/* -----------------------------------
+Estilos base - E-commerce
+
+----------------------------------- */
+
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;400;600&display=swap');
+
+
+
+
+*{
+--fondo: #fff8f5;
+--rosa: #f3c8c2;
+--rosa-suave: #fde9e6;
+--dorado: #c6a664;
+--texto: #2e2e2e;
+--blanco: #ffffff;
+}
+
+
+
+
+
+*{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+
+
+body {
+background-color: var(--fondo);
+color: var(--texto);
+font-family: "Poppins", sans-serif;
+overflow-x: hidden;
+}
+
+
+
+
+/* -----------------------------------
+ENCABEZADO
+----------------------------------- */
+header {
+width: 100%;
+background-color: var(--blanco);
+box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 1.2rem 5%;
+position: sticky;
+top: 0;
+z-index: 10;
+}
+
+
+
+
+header h1 {
+font-family: "Playfair Display", serif;
+font-style: italic;
+font-size: 1.8rem;
+color: var(--dorado);
+}
+
+
+
+
+nav ul {
+list-style: none;
+display: flex;
+gap: 2rem;
+}
+
+
+
+
+nav a {
+text-decoration: none;
+color: var(--texto);
+font-weight: 500;
+transition: color 0.3s ease;
+}
+
+
+
+
+nav a {
+color: var(--rosa);
+}
+
+
+
+
+.cart-btn {
+font-size: 1.5rem;
+cursor: pointer;
+}
+
+
+
+
+/* -----------------------------------
+HERO PRINCIPAL
+----------------------------------- */
+.hero {
+background: linear-gradient(to bottom right, var(--rosa-suave), var(--fondo));
+text-align: center;
+padding: 6rem 10%;
+}
+
+
+
+
+.hero h2 {
+font-family: "Playfair Display", serif;
+font-size: 2.6rem;
+color: var(--texto);
+margin-bottom: 1rem;
+}
+
+
+
+
+.hero p {
+font-size: 1.1rem;
+margin-bottom: 2rem;
+}
+
+
+
+
+.hero a {
+display: inline-block;
+background-color: var(--rosa);
+color: var(--blanco);
+padding: 0.9rem 1.6rem;
+border-radius: 30px;
+text-decoration: none;
+font-weight: 500;
+transition: all 0.3s ease;
+}
+
+
+
+
+.hero a {
+background-color: var(--dorado);
+}
+
+
+
+
+/* -----------------------------------
+PRODUCTOS
+----------------------------------- */
+.productos {
+padding: 4rem 8%;
+}
+
+
+
+
+.productos h3 {
+text-align: center;
+font-family: "Playfair Display", serif;
+font-style: italic;
+color: var(--dorado);
+font-size: 2rem;
+margin-bottom: 2.5rem;
+}
+
+
+
+
+.grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+gap: 2rem;
+}
+
+
+
+
+.card {
+background-color: var(--blanco);
+border-radius: 15px;
+overflow: hidden;
+box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+
+
+.card {
+transform: translateY(-6px);
+box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+}
+
+
+
+
+.card img {
+width: 100%;
+height: 220px;
+object-fit: cover;
+}
+
+
+
+
+.card-info {
+padding: 1rem 1.2rem;
+}
+
+
+
+
+.card-info h4 {
+font-size: 1.1rem;
+margin-bottom: 0.4rem;
+}
+
+
+
+
+.card-info p {
+color: var(--rosa);
+font-weight: 600;
+margin-bottom: 0.8rem;
+}
+
+
+
+
+.btn-agregar {
+background-color: var(--rosa);
+color: var(--blanco);
+border: none;
+padding: 0.6rem 1.2rem;
+border-radius: 20px;
+cursor: pointer;
+transition: background 0.3s ease;
+}
+
+
+
+
+.btn-agregar {
+background-color: var(--dorado);
+}
+
+
+
+
+/* === CARRITO LATERAL (versión sincronizada con JS) === */
+.carrito {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 350px;
+  height: 100%;
+  background: #fff8f6;
+  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.15);
+  transform: translateX(100%);
+  transition: transform 0.4s ease;
+  z-index: 2000;
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+  overflow-y: auto;
+  border-left: 3px solid #f2b6b6;
+}
+
+.carrito.visible {
+  transform: translateX(0);
+}
+
+/* Fondo oscuro detrás del carrito */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s ease;
+  z-index: 1500;
+}
+
+.overlay.activo {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Botón cerrar */
+#cerrarCarrito {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #333;
+  cursor: pointer;
+  align-self: flex-end;
+  transition: transform 0.2s ease;
+}
+
+#cerrarCarrito:hover {
+  transform: scale(1.2);
+  color: #ff6f61;
+}
+
+/* Texto y total */
+.total {
+  font-weight: bold;
+  margin-top: 1.5rem;
+  text-align: right;
+  font-size: 1.1rem;
+  color: #333;
+}
+
+/* Botones */
+.btn-vaciar,
+.btn-checkout {
+  width: 100%;
+  border: none;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.btn-vaciar {
+  background: #f5c2c2;
+  color: #333;
+}
+
+.btn-vaciar:hover {
+  background: #e89b9b;
+}
+
+.btn-checkout {
+  background: #333;
+  color: #fff;
+}
+
+.btn-checkout:hover {
+  background: #555;
+}
+/* -----------------------------------
+PIE DE PÁGINA
+----------------------------------- */
+footer {
+background-color: var(--rosa-suave);
+text-align: center;
+padding: 2rem 0;
+color: var(--texto);
+font-size: 0.9rem;
+margin-top: 3rem;
+}
+.btn-checkout:hover {
+  background-color: var(--dorado);
+}
+
+/* Estilo para productos!!---------------------------*/
+.titulo {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #d47b91;
+  margin: 2rem 0 1rem;
+  font-family: 'Poppins', sans-serif;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  padding: 0 2rem 2rem;
+}
+
+.card {
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  overflow: hidden;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+
+.card img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+
+.card-info {
+  padding: 1rem;
+}
+
+.card-info h4 {
+  color: #444;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.card-info p {
+  font-size: 0.9rem;
+  color: #777;
+  margin-bottom: 1rem;
+}
+
+.btn-agregar {
+  background: #e58fa6;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 0.6rem 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.btn-agregar:hover {
+  background: #d0748b
+}
+/* ==== ESTILO PARA IMÁGENES DE PRODUCTOS ==== */
+.productos .card img {
+  width: 100%;
+  height: 250px; /* puedes ajustar el alto: 200px o 300px si prefieres */
+  object-fit: cover; /* recorta la imagen sin deformarla */
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  transition: transform 0.3s ease;
+}
+
+.productos .card img:hover {
+  transform: scale(1.05);
+}
+
+/* Ajuste general de las tarjetas */
+.productos .card {
+  background-color: #fff;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  max-width: 350px;
+  margin: 15px auto;
+}
+
+.productos .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.productos .grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+}
+/* Carrusel----------*/
+.carousel {
+  position: relative;
+  width: 900px;  /* ancho fijo */
+  height: 500px; /* alto fijo */
+  margin: 40px auto;
+  overflow: hidden;
+  border-radius: 20px;
+  background-color: #fcefee;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.carousel-container {
+  display: flex;
+  width: 300%; /* 3 imágenes, cada una 100% */
+  height: 100%;
+  animation: moverCarrusel 12s infinite linear;
+}
+
+.slide {
+  flex: 0 0 100%; /* solo una imagen visible a la vez */
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  padding: 0 10px;
+  box-sizing: border-box;
+}
+
+.slide img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  border-radius: 10px;
+}
+
+/* Animación para mover el carrusel hacia la izquierda, imagen por imagen */
+@keyframes moverCarrusel {
+  0% { transform: translateX(0); }
+  30% { transform: translateX(0); }
+
+  33% { transform: translateX(-100%); }
+  63% { transform: translateX(-100%); }
+
+  66% { transform: translateX(-200%); }
+  96% { transform: translateX(-200%); }
+
+  100% { transform: translateX(0); }
+}

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Glow & Glam</title>
+  <link rel="stylesheet" href="css/estilos.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- ENCABEZADO -->
+  <header class="navbar">
+    <div class="logo">Glow & Glam</div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="productos.html">Productos</a></li>
+        <li><a href="#">Nosotros</a></li>
+        <li><a href="#">Contacto</a></li>
+      </ul>
+    </nav>
+    <div class="cart" style="cursor:pointer;">🛒</div>
+  </header>
+    <section class="carousel">
+  <div class="carousel-container">
+    <div class="slide">
+      <img src="https://cdn2.melodijolola.com/media/files/th3_26_0.jpg" alt="Modelo 1">
+    </div>
+    <div class="slide">
+      <img src="https://i.pinimg.com/originals/f5/f2/7c/f5f27cd4b399c2fa5407677d0da3ddcd.jpg" alt="Modelo 2">
+    </div>
+    <div class="slide">
+      <img src="https://www.somosmamas.com.ar/wp-content/uploads/2020/09/maquillaje-facil-looks.jpg" alt="Modelo 3">
+    </div>
+  </div>
+</section>
+  
+ 
+
+
+  <!-- BANNER PRINCIPAL -->
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Brilla con tu mejor versión</h1>
+      <p>Descubre maquillaje profesional, cuidado facial y belleza natural al mejor precio.</p>
+      <a href="productos.html" class="btn-principal">Ver productos</a>
+    </div>
+  </section>
+
+  <!-- PRODUCTOS DESTACADOS -->
+  <section class="productos">
+    <h2 class="titulo-seccion">Favoritos del mes</h2>
+    <div class="grid-productos">
+      <div class="producto card">
+        <img src="img/productos/Base liquida.webp" alt="Base líquida">
+        <h4>Base líquida GlowSkin</h4>
+        <p>$49.900</p>
+        <button class="btn-agregar">Agregar</button>
+      </div>
+      <div class="producto card">
+        <img src="img/productos/labial_rose.jpg" alt="Labial rosado">
+        <h4>Labial Mate Rose</h4>
+        <p>$29.000</p>
+        <button class="btn-agregar">Agregar</button>
+      </div>
+      <div class="producto card">
+        <img src="img/productos/paleta_sombras.jpg" alt="Paleta de sombras">
+        <h4>Paleta de Sombras Glam Palette</h4>
+        <p>$75.000</p>
+        <button class="btn-agregar">Agregar</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROMOCIÓN -->
+  <section class="promo">
+    <h2>¡Promoción especial!</h2>
+    <p>Llévate 2 productos y obtén el 30% de descuento en el segundo.</p>
+    <a href="productos.html" class="btn-secundario">Comprar ahora</a>
+  </section>
+
+  <!-- PIE DE PÁGINA -->
+  <footer>
+    <p>© 2025 Glow & Glam. Todos los derechos reservados.</p>
+    <div class="redes">
+      <a href="#">Instagram</a> |
+      <a href="#">Facebook</a> |
+      <a href="#">TikTok</a>
+    </div>
+  </footer>
+
+  <!-- CARRITO (igual que en productos.html) -->
+  <div class="carrito" id="carrito">
+  <span class="cerrar-carrito" id="cerrarCarrito">×</span>
+  <h4>Tu Carrito</h4>
+  <ul id="lista-carrito"></ul>
+  <p class="total">Total: $0.00</p>
+  <button class="btn-vaciar">Vaciar carrito</button>
+  <button class="btn-checkout">Finalizar compra</button>
+</div>
+
+  <!-- CONEXIÓN CON JAVASCRIPT -->
+  <script src="js/main.js" defer></script>
+</body>
+</html>

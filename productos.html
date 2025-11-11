@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Productos | Dulce & Salado</title>
+  <link rel="stylesheet" href="css/estilos.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ENCABEZADO -->
+  <header class="navbar">
+    <div class="logo">Dulce & Salado</div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="#">Menú</a></li>
+        <li><a href="#">Nosotros</a></li>
+        <li><a href="#">Contacto</a></li>
+      </ul>
+    </nav>
+    <div class="cart" style="cursor:pointer;">🛒</div>
+  </header>
+
+  <!-- Enlace para volver a inicio -->
+  <div style="margin: 1.5rem 0; text-align: center;">
+    <a href="index.html" style="color: var(--dorado); font-weight: 600; text-decoration: none;">← Volver al Inicio</a>
+  </div>
+
+  <!-- Sección productos -->
+  <section class="productos" style="padding-top: 0;">
+    <h3>Nuestros Postres</h3>
+
+    <div class="grid">
+      <div class="card">
+        <img src="img/postre1.jpg" alt="Cheesecake" />
+        <div class="card-info">
+          <h4>Cheesecake</h4>
+          <p>$5.00</p>
+          <button class="btn-agregar">Agregar</button>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="img/postre2.jpg" alt="Brownie" />
+        <div class="card-info">
+          <h4>Brownie</h4>
+          <p>$4.50</p>
+          <button class="btn-agregar">Agregar</button>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="img/postre3.jpg" alt="Tiramisú" />
+        <div class="card-info">
+          <h4>Tiramisú</h4>
+          <p>$6.00</p>
+          <button class="btn-agregar">Agregar</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Carrito lateral -->
+  <div class="carrito" id="carrito">
+  <span class="cerrar-carrito" id="cerrarCarrito">×</span>
+  <h4>Tu Carrito</h4>
+  <ul id="lista-carrito"></ul>
+  <p class="total">Total: $0.00</p>
+  
+</div>
+    
+  <!-- Enlace al JS -->
+  <script src="js/main.js" defer></script>
+  <div class="overlay" id="overlay"></div>
+</body>
+</html>
