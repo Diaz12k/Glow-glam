@@ -81,33 +81,3 @@ btnVaciar.addEventListener('click', () => {
   productosEnCarrito = [];
   actualizarCarritoUI();
 });
-
-// Logica para mover el carrusel---
-document.addEventListener("DOMContentLoaded", () => {
-  const slides = document.querySelectorAll(".slide");
-  const container = document.querySelector(".carousel-container");
-  const prevBtn = document.querySelector(".carousel-btn.prev");
-  const nextBtn = document.querySelector(".carousel-btn.next");
-  let index = 0;
-
-  function showSlide(i) {
-    const offset = -i * 100;
-    container.style.transform = `translateX(${offset}%)`;
-  }
-
-  prevBtn.addEventListener("click", () => {
-    index = (index - 1 + slides.length) % slides.length;
-    showSlide(index);
-  });
-
-  nextBtn.addEventListener("click", () => {
-    index = (index + 1) % slides.length;
-    showSlide(index);
-  });
-
-  // Auto avance cada 4 segundos
-  setInterval(() => {
-    index = (index + 1) % slides.length;
-    showSlide(index);
-  }, 4000);
-});
