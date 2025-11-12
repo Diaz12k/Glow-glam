@@ -479,32 +479,35 @@ margin-top: 3rem;
   position: relative;
   width: 100%;
   max-width: 900px;
-  margin: 40px auto; /* se encuentre centrado */
+  margin: 40px auto;
   overflow: hidden;
   border-radius: 20px;
   background-color: #fcefee;
   box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-    }
-/* contenedor que las guarda todas*/
-.carrusel-container{
+}
+
+/* contenedor que las guarda todas */
+.carrusel-container {
   display: flex;
   transition: transform 0.5s ease-in-out;
   width: 100%;
 }
-/* imagen*/
-.slide{
+
+/* imagen */
+.slide {
   min-width: 100%;
   box-sizing: border-box;
 }
-/* ajuste del tamaño dentro del contenedor*/
+
+/* ajuste del tamaño dentro del contenedor */
 .slide img {
   width: 100%;
-  heigth: 450px;
+  height: 450px;
   object-fit: cover;
   display: block;
 }
 
-/*botones del carrusel*/
+/* botones del carrusel */
 .anterior, .siguiente {
   position: absolute;
   top: 50%;
@@ -518,32 +521,19 @@ margin-top: 3rem;
   font-size: 2rem;
   transition: background 0.3s, transform 0.3s;
 }
-/*movimiento con el mouse*/
-.anterior: hover, .siguiente:hover {
-background-color: #f3c8c2;
+
+/* movimiento con el mouse */
+.anterior:hover, .siguiente:hover {
+  background-color: #f3c8c2;
 }
-/*posiciones de los botones*/
-.anterior{
+
+/* posiciones de los botones */
+.anterior {
   left: 10px;
-         }
-.siguiente{ 
-  rigth:10px;
-          }
+}
 
-
-/* Animación para mover el carrusel hacia la izquierda, imagen por imagen */
-@keyframes moverCarrusel {
-  0% { transform: translateX(0); }
-  30% { transform: translateX(0); }
-
-  33% { transform: translateX(-100%); }
-  63% { transform: translateX(-100%); }
-
-  66% { transform: translateX(-200%); }
-  96% { transform: translateX(-200%); }
-
-  100% { transform: translateX(0); }
-
+.siguiente { 
+  right: 10px;
 }
 
 
