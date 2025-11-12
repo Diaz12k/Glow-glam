@@ -475,41 +475,59 @@ margin-top: 3rem;
   gap: 25px;
 }
 /* Carrusel----------*/
-.carousel {
+.carrusel {
   position: relative;
-  width: 900px;  /* ancho fijo */
-  height: 500px; /* alto fijo */
-  margin: 40px auto;
+  width: 80%;
+  max-width: 900px;
+  margin: 60px auto; /* se encuentre centrado */
   overflow: hidden;
-  border-radius: 20px;
-  background-color: #fcefee;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-}
-
-.carousel-container {
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+    }
+/* contenedor que las guarda todas*/
+.carrusel-container{
   display: flex;
-  width: 300%; /* 3 imágenes, cada una 100% */
-  height: 100%;
-  animation: moverCarrusel 12s infinite linear;
+  transition: opacity 0.6s ease-in-out;
+}
+/* imagen*/
+.slide{
+  min-width: 100%;
+  opacity: 0;
+  transition: opacity 0.8s ease;
 }
 
-.slide {
-  flex: 0 0 100%; /* solo una imagen visible a la vez */
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #fff;
-  padding: 0 10px;
-  box-sizing: border-box;
+/* imagen mostrada en el momento*/
+.slide.active{
+  opacity: 1;
 }
-
+/* ajuste del tamaño dentro del contenedor*/
 .slide img {
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: contain;
-  border-radius: 10px;
+  width: 100%;
+  display: block;
+  object-fit: cover;
 }
+/*botones del carrusel*/
+.anterior, .siguiente {
+position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0,0,0,0.4);
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 20px;
+  transition: background 0.3s;
+}
+/*movimiento con el mouse*/
+.anterior: hover, .siguiente:hover {
+background-color: rgba(0,0,0,0.6);
+}
+/*posiciones de los botones*/
+.anterior{ left: 15px;}
+.siguiente{ rigth:15px;}
+
 
 /* Animación para mover el carrusel hacia la izquierda, imagen por imagen */
 @keyframes moverCarrusel {
@@ -523,4 +541,5 @@ margin-top: 3rem;
   96% { transform: translateX(-200%); }
 
   100% { transform: translateX(0); }
+
 }
