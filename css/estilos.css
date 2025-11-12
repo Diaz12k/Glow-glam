@@ -477,9 +477,8 @@ margin-top: 3rem;
 /* Carrusel----------*/
 .carrusel {
   position: relative;
-  width: 90%;
-  max-width: 1000px;
-  heigth: 450px;
+  width: 100%;
+  max-width: 900px;
   margin: 40px auto; /* se encuentre centrado */
   overflow: hidden;
   border-radius: 20px;
@@ -489,43 +488,39 @@ margin-top: 3rem;
 /* contenedor que las guarda todas*/
 .carrusel-container{
   display: flex;
-  transition: transform 0.8s ease;
-  height: 100%;
+  transition: transform 0.5s ease-in-out;
+  width: 100%;
 }
 /* imagen*/
 .slide{
-  flex: 0 0 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  min-width: 100%;
+  box-sizing: border-box;
 }
 /* ajuste del tamaño dentro del contenedor*/
 .slide img {
   width: 100%;
-  heigth: 100%
+  heigth: 450px;
   object-fit: cover;
-  border-radius:20px;
+  display: block;
 }
 
 /*botones del carrusel*/
 .anterior, .siguiente {
-position: absolute;
+  position: absolute;
   top: 50%;
   transform: translateY(-50%);
   background-color: rgba(255,255,255,0.7);
   border: none;
   color: #d47b91;
-  padding: 0.3rem 0.8rem;
+  padding: 10px;
   border-radius: 50%;
   cursor: pointer;
   font-size: 2rem;
   transition: background 0.3s, transform 0.3s;
-  z-index: 10;
 }
 /*movimiento con el mouse*/
 .anterior: hover, .siguiente:hover {
 background-color: #f3c8c2;
-  transform: scale(1,1);
 }
 /*posiciones de los botones*/
 .anterior{
@@ -550,4 +545,5 @@ background-color: #f3c8c2;
   100% { transform: translateX(0); }
 
 }
+
 
