@@ -574,8 +574,14 @@ margin-top: 3rem;
 /* === CONTACTO === */
 .contacto {
   background-color: var(--fondo);
-  padding: 4rem 0;
+  padding: 1.2rem 5%;
   text-align: center;
+  display: flex;
+  box-shadow: 0 2px 8px;
+  justify-content: space-between;
+  position: sticky;
+  top:0;
+  z-index: 100;
 }
 
 .titulo-contacto {
@@ -630,6 +636,7 @@ margin-top: 3rem;
 .btn-enviar:hover {
   background-color: var(--dorado);
 }
+
 
 
 
