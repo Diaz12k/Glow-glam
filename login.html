@@ -5,21 +5,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Iniciar Sesión | Glow & Glam</title>
   <link rel="stylesheet" href="css/estilos.css">
+  <link rel="stylesheet" href="css/login.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
   <!-- === ENCABEZADO IGUAL AL RESTO === -->
-  <header>
-    <h1>Glow & Glam</h1>
+  <header class="navbar">
+    <div class="logo">Glow & Glam</div>
     <nav>
       <ul>
         <li><a href="index.html">Inicio</a></li>
         <li><a href="productos.html">Productos</a></li>
         <li><a href="contacto.html">Contacto</a></li>
-        <li><a href="login.html" style="color: var(--dorado); font-weight:600;">Login</a></li>
       </ul>
     </nav>
-    <div class="cart-btn">🛒</div>
+    <div class="iconos">
+      <a href="login.html" class="usuario" title="Iniciar sesión">👤</a>
+      <div class="cart" style="cursor:pointer;">🛒</div>
+    </div>
   </header>
 
   <!-- === CONTENEDOR DEL LOGIN === -->
@@ -36,8 +41,8 @@
         <button type="submit" class="btn-ingresar">Ingresar</button>
       </form>
 
-      <p class="crear-cuenta">¿No tienes cuenta?
-        <a href="registro.html">Crear una cuenta</a>
+      <p class="crear-cuenta">
+        ¿No tienes cuenta? <a href="registro.html">Crear una cuenta</a>
       </p>
     </div>
   </section>
