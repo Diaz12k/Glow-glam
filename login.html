@@ -1,73 +1,56 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Iniciar sesión - Glow & Glam</title>
-  <link rel="stylesheet" href="css/login.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Iniciar Sesión | Glow & Glam</title>
+  <link rel="stylesheet" href="css/estilos.css">
 </head>
-
 <body>
-  <!-- ENCABEZADO -->
-  <header class="navbar">
-    <div class="logo">Glow & Glam</div>
+
+  <!-- === ENCABEZADO IGUAL AL RESTO === -->
+  <header>
+    <h1>Glow & Glam</h1>
     <nav>
       <ul>
         <li><a href="index.html">Inicio</a></li>
         <li><a href="productos.html">Productos</a></li>
-        <li><a href="nosotros.html">nosotros</a></li>
         <li><a href="contacto.html">Contacto</a></li>
+        <li><a href="login.html" style="color: var(--dorado); font-weight:600;">Login</a></li>
       </ul>
     </nav>
-
-    <div class="acciones">
-      <a href="login.html" class="icono-usuario">👤</a>
-      <div class="cart" style="cursor:pointer;">🛒</div>
-    </div>
+    <div class="cart-btn">🛒</div>
   </header>
 
-  <!-- FORMULARIO -->
-  <section class="login-container">
+  <!-- === CONTENEDOR DEL LOGIN === -->
+  <section class="login-section">
     <div class="login-box">
-      <input type="radio" name="toggle" id="login-tab" checked>
-      <input type="radio" name="toggle" id="signup-tab">
+      <h2>Inicia Sesión</h2>
+      <form>
+        <label for="usuario">Usuario o correo</label>
+        <input type="text" id="usuario" placeholder="Ingresa tu usuario" required>
 
-      <div class="tab-buttons">
-        <label for="login-tab">Iniciar sesión</label>
-        <label for="signup-tab">Crear cuenta</label>
-      </div>
+        <label for="password">Contraseña</label>
+        <input type="password" id="password" placeholder="Ingresa tu contraseña" required>
 
-      <div class="form-content">
-        <!-- INICIAR SESIÓN -->
-        <form class="login-form">
-          <h2>Bienvenida de nuevo </h2>
-          <input type="email" placeholder="Correo electrónico" required>
-          <input type="password" placeholder="Contraseña" required>
-          <button type="submit" class="btn">Iniciar sesión</button>
-          <p class="olvide">¿Olvidaste tu contraseña?</p>
-        </form>
+        <button type="submit" class="btn-ingresar">Ingresar</button>
+      </form>
 
-        <!-- CREAR CUENTA -->
-        <form class="signup-form">
-          <h2>Regístrate </h2>
-          <input type="text" placeholder="Nombre completo" required>
-          <input type="email" placeholder="Correo electrónico" required>
-          <input type="password" placeholder="Crea una contraseña" required>
-          <button type="submit" class="btn">Crear cuenta</button>
-        </form>
-      </div>
-
-      <!-- CERRAR SESIÓN -->
-      <div class="logout">
-        <p>Ya tienes una sesión iniciada.</p>
-        <button class="btn-cerrar">Cerrar sesión</button>
-      </div>
+      <p class="crear-cuenta">¿No tienes cuenta?
+        <a href="registro.html">Crear una cuenta</a>
+      </p>
     </div>
   </section>
 
+  <!-- === PIE DE PÁGINA IGUAL === -->
   <footer>
     <p>© 2025 Glow & Glam. Todos los derechos reservados.</p>
+    <div class="redes">
+      <a href="#">Instagram</a> |
+      <a href="#">Facebook</a> |
+      <a href="#">TikTok</a>
+    </div>
   </footer>
+
 </body>
 </html>
