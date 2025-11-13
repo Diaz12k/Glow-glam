@@ -1,1 +1,69 @@
+/* ======================================================
+   ESTILOS - PÁGINA DE NOSOTROS
+   ====================================================== */
 
+.nosotros {
+  padding: 60px 20px;
+  text-align: center;
+  background-color: var(--rosa-claro);
+}
+
+.nosotros h1 {
+  font-size: 2.3rem;
+  color: var(--texto);
+  margin-bottom: 30px;
+}
+
+.nosotros p {
+  color: var(--gris);
+  max-width: 800px;
+  margin: 0 auto 30px auto;
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+/* Equipo */
+.equipo {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.miembro {
+  background: #fff;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px var(--sombra);
+  width: 250px;
+  text-align: center;
+  transition: 0.3s ease;
+}
+
+.miembro:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px var(--sombra);
+}
+
+.miembro img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 15px;
+}
+
+.miembro h3 {
+  color: var(--texto);
+  margin-bottom: 5px;
+}
+
+.miembro p {
+  color: var(--gris);
+  font-size: 0.95rem;
+}
+
+/* ======================================================
+   FIN NOSOTROS
+   ====================================================== */
