@@ -224,3 +224,21 @@ footer {
 .crear-cuenta a:hover {
   color: var(--dorado);
 }
+.iconos {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.iconos a,
+.iconos .cart {
+  font-size: 1.6rem;
+  color: var(--rosa);
+  text-decoration: none;
+  transition: transform 0.3s ease;
+}
+
+.iconos a:hover,
+.iconos .cart:hover {
+  transform: scale(1.2);
+}
