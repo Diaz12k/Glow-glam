@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Glow & Glam</title>
-  <link rel="stylesheet" href="css/estilos.css" />
+  <link rel="stylesheet" href="css/estilos.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
 </head>
 <body>
 
-  <!-- ENCABEZADO -->
+  <!-- NAVBAR -->
   <header class="navbar">
     <div class="logo">Glow & Glam</div>
     <nav>
@@ -20,7 +20,7 @@
         <li><a href="contacto.html">Contacto</a></li>
       </ul>
     </nav>
-    <div class="cart" style="cursor:pointer;">🛒</div>
+    <div class="cart" id="btnCarrito">🛒</div>
   </header>
 
   <!-- CARRUSEL -->
@@ -34,19 +34,16 @@
     <button class="siguiente">&#10095;</button>
   </section>
 
-  <!-- HERO / BANNER PRINCIPAL -->
+  <!-- HERO -->
   <section class="hero">
-    <div class="hero-text">
-      <h1>Brilla con tu mejor versión</h1>
-      <p>Descubre maquillaje profesional, cuidado facial y belleza natural al mejor precio.</p>
-      <a href="productos.html" class="btn-principal">Ver productos</a>
-    </div>
+    <h1>Brilla con tu mejor versión</h1>
+    <p>Descubre maquillaje profesional, cuidado facial y belleza natural al mejor precio.</p>
+    <a href="productos.html" class="btn-principal">Ver productos</a>
   </section>
 
   <!-- PRODUCTOS DESTACADOS -->
   <section class="productos">
-    <h2 class="titulo-seccion">Favoritos del mes</h2>
-
+    <h2 class="titulo">Favoritos del mes</h2>
     <div class="grid">
       <div class="card">
         <img src="img/productos/Base liquida.webp" alt="Base líquida">
@@ -96,7 +93,7 @@
 
   <!-- CARRITO -->
   <div class="carrito" id="carrito">
-    <span class="cerrar-carrito" id="cerrarCarrito">×</span>
+    <button id="cerrarCarrito">×</button>
     <h4>Tu Carrito</h4>
     <ul id="lista-carrito"></ul>
     <p class="total">Total: $0.00</p>
@@ -105,10 +102,8 @@
   </div>
   <div class="overlay" id="overlay"></div>
 
-  <!-- JS -->
   <script src="js/main.js" defer></script>
   <script src="js/carrusel.js" defer></script>
-
 </body>
 </html>
 
