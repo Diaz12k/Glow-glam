@@ -547,5 +547,66 @@ margin-top: 3rem;
   transform: translateY(0);
 }
 
+/* === CONTACTO === */
+.contacto {
+  background-color: var(--fondo);
+  padding: 4rem 0;
+  text-align: center;
+}
+
+.titulo-contacto {
+  font-family: "Playfair Display", serif;
+  color: var(--dorado);
+  font-size: 2.3rem;
+  margin-bottom: 1rem;
+}
+
+.texto-contacto {
+  color: var(--texto);
+  font-size: 1rem;
+  margin-bottom: 2rem;
+}
+
+.formulario-contacto {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: left;
+  background-color: var(--blanco);
+  border: 1px solid var(--rosa-suave);
+}
+
+.formulario-contacto .form-label {
+  color: var(--texto);
+  font-weight: 600;
+}
+
+.formulario-contacto .form-control {
+  border: 1px solid #f3c8c2;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.formulario-contacto .form-control:focus {
+  border-color: var(--dorado);
+  box-shadow: 0 0 5px rgba(198, 166, 100, 0.4);
+}
+
+.btn-enviar {
+  display: block;
+  width: 100%;
+  background-color: var(--rosa);
+  color: var(--blanco);
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-enviar:hover {
+  background-color: var(--dorado);
+}
+
+
 
 
