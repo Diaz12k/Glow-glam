@@ -1,117 +1,73 @@
-
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;400;600&display=swap');
-
-
-
-
-*{
---fondo: #fff8f5;
---rosa: #f3c8c2;
---rosa-suave: #fde9e6;
---dorado: #c6a664;
---texto: #2e2e2e;
---blanco: #ffffff;
-}
-
-
-
-
-
-*{
-margin: 0;
-padding: 0;
-box-sizing: border-box;
-}
-
-
-/* 🎨 VARIABLES DE COLOR GLOBALES */
+/* ===============================
+VARIABLES GLOBALES
+=============================== */
 :root {
-  --rosa: #e8a4c9;
-  --texto: #333;
+  --fondo: #fff8f5;
+  --rosa: #f3c8c2;
+  --rosa-suave: #fde9e6;
+  --dorado: #c6a664;
+  --texto: #2e2e2e;
+  --blanco: #ffffff;
+}
+
+/* ===============================
+RESET & BASE
+=============================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-background-color: var(--fondo);
-color: var(--texto);
-font-family: "Poppins", sans-serif;
-overflow-x: hidden;
-}
-
-
-
-
-/* -----------------------------------
-ENCABEZADO
------------------------------------ */
-header {
-width: 100%;
-background-color: var(--blanco);
-box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-display: flex;
-justify-content: space-between;
-align-items: center;
-padding: 1.2rem 5%;
-position: sticky;
-top: 0;
-z-index: 10;
-}
-
-
-
-
-header h1 {
-font-family: "Playfair Display", serif;
-font-style: italic;
-font-size: 1.8rem;
-color: var(--dorado);
-}
-
-
-
-
-nav ul {
-list-style: none;
-display: flex;
-gap: 2rem;
-}
-
-
-
-
-nav a {
-text-decoration: none;
-color: var(--texto);
-font-weight: 500;
-transition: color 0.3s ease;
-}
-
-
-
-
-nav a {
-color: var(--rosa);
-}
-
-
-
-
-.cart-btn {
-font-size: 1.5rem;
-cursor: pointer;
-}
-/* 🌸 EFECTO DE INTERACCIÓN EN MENÚ SUPERIOR */
-.navbar nav a {
-  position: relative;
-  text-decoration: none;
+  font-family: "Poppins", sans-serif;
+  background-color: var(--fondo);
   color: var(--texto);
+  overflow-x: hidden;
+}
+
+/* ===============================
+NAVBAR
+=============================== */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 5%;
+  background-color: var(--blanco);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.navbar .logo {
+  font-family: "Playfair Display", serif;
+  font-style: italic;
+  font-size: 1.8rem;
+  color: var(--dorado);
+}
+
+.navbar nav ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+.navbar nav a {
+  text-decoration: none;
+  color: var(--rosa);
   font-weight: 500;
+  position: relative;
   transition: color 0.3s ease;
 }
 
 .navbar nav a::after {
   content: "";
   position: absolute;
-  left: 0;
   bottom: -5px;
-  width: 0%;
+  left: 0;
+  width: 0;
   height: 2px;
   background-color: var(--rosa);
   transition: width 0.3s ease;
@@ -122,311 +78,83 @@ cursor: pointer;
 }
 
 .navbar nav a:hover {
-  color: var(--rosa);
+  color: var(--dorado);
 }
 
-.navbar:hover {
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
-  transition: box-shadow 0.3s ease;
+.cart {
+  font-size: 1.5rem;
+  cursor: pointer;
 }
 
-
-
-/* -----------------------------------
-HERO PRINCIPAL
------------------------------------ */
+/* ===============================
+HERO
+=============================== */
 .hero {
-background: linear-gradient(to bottom right, var(--rosa-suave), var(--fondo));
-text-align: center;
-padding: 6rem 10%;
+  text-align: center;
+  padding: 6rem 10%;
+  background: linear-gradient(to bottom right, var(--rosa-suave), var(--fondo));
 }
 
-
-
-
-.hero h2 {
-font-family: "Playfair Display", serif;
-font-size: 2.6rem;
-color: var(--texto);
-margin-bottom: 1rem;
+.hero h1 {
+  font-family: "Playfair Display", serif;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
 }
-
-
-
 
 .hero p {
-font-size: 1.1rem;
-margin-bottom: 2rem;
-}
-
-
-
-
-.hero a {
-display: inline-block;
-background-color: var(--rosa);
-color: var(--blanco);
-padding: 0.9rem 1.6rem;
-border-radius: 30px;
-text-decoration: none;
-font-weight: 500;
-transition: all 0.3s ease;
-}
-
-
-
-
-.hero a {
-background-color: var(--dorado);
-}
-
-
-
-
-/* -----------------------------------
-PRODUCTOS
------------------------------------ */
-.productos {
-padding: 4rem 8%;
-}
-
-
-
-
-.productos h3 {
-text-align: center;
-font-family: "Playfair Display", serif;
-font-style: italic;
-color: var(--dorado);
-font-size: 2rem;
-margin-bottom: 2.5rem;
-}
-
-
-
-
-.grid {
-display: grid;
-grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-gap: 2rem;
-}
-
-
-
-
-.card {
-background-color: var(--blanco);
-border-radius: 15px;
-overflow: hidden;
-box-shadow: 0 4px 10px rgba(0,0,0,0.06);
-transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-
-
-
-.card {
-transform: translateY(-6px);
-box-shadow: 0 6px 16px rgba(0,0,0,0.08);
-}
-
-
-
-
-.card img {
-width: 100%;
-height: 220px;
-object-fit: cover;
-}
-
-
-
-
-.card-info {
-padding: 1rem 1.2rem;
-}
-
-
-
-
-.card-info h4 {
-font-size: 1.1rem;
-margin-bottom: 0.4rem;
-}
-
-
-
-
-.card-info p {
-color: var(--rosa);
-font-weight: 600;
-margin-bottom: 0.8rem;
-}
-
-
-
-
-.btn-agregar {
-background-color: var(--rosa);
-color: var(--blanco);
-border: none;
-padding: 0.6rem 1.2rem;
-border-radius: 20px;
-cursor: pointer;
-transition: background 0.3s ease;
-}
-
-
-
-
-.btn-agregar {
-background-color: var(--dorado);
-}
-
-
-
-
-/* === CARRITO LATERAL (versión sincronizada con JS) === */
-.carrito {
-  position: fixed;
-  top: 0;
-  right: 0;
-  width: 350px;
-  height: 100%;
-  background: #fff8f6;
-  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.15);
-  transform: translateX(100%);
-  transition: transform 0.4s ease;
-  z-index: 2000;
-  display: flex;
-  flex-direction: column;
-  padding: 1.5rem;
-  overflow-y: auto;
-  border-left: 3px solid #f2b6b6;
-}
-
-.carrito.visible {
-  transform: translateX(0);
-}
-
-/* Fondo oscuro detrás del carrito */
-.overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.4);
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.4s ease;
-  z-index: 1500;
-}
-
-.overlay.activo {
-  opacity: 1;
-  visibility: visible;
-}
-
-/* Botón cerrar */
-#cerrarCarrito {
-  background: none;
-  border: none;
-  font-size: 1.5rem;
-  color: #333;
-  cursor: pointer;
-  align-self: flex-end;
-  transition: transform 0.2s ease;
-}
-
-#cerrarCarrito:hover {
-  transform: scale(1.2);
-  color: #ff6f61;
-}
-
-/* Texto y total */
-.total {
-  font-weight: bold;
-  margin-top: 1.5rem;
-  text-align: right;
   font-size: 1.1rem;
-  color: #333;
+  margin-bottom: 2rem;
 }
 
-/* Botones */
-.btn-vaciar,
-.btn-checkout {
-  width: 100%;
-  border: none;
-  padding: 10px;
-  margin-top: 10px;
-  border-radius: 8px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background 0.3s ease;
-}
-
-.btn-vaciar {
-  background: #f5c2c2;
-  color: #333;
-}
-
-.btn-vaciar:hover {
-  background: #e89b9b;
-}
-
-.btn-checkout {
-  background: #333;
-  color: #fff;
-}
-
-.btn-checkout:hover {
-  background: #555;
-}
-/* -----------------------------------
-PIE DE PÁGINA
------------------------------------ */
-footer {
-background-color: var(--rosa-suave);
-text-align: center;
-padding: 2rem 0;
-color: var(--texto);
-font-size: 0.9rem;
-margin-top: 3rem;
-}
-.btn-checkout:hover {
+.hero a {
+  display: inline-block;
+  padding: 0.9rem 1.6rem;
+  border-radius: 30px;
+  text-decoration: none;
   background-color: var(--dorado);
-}
-
-/* Estilo para productos!!---------------------------*/
-.titulo {
-  text-align: center;
-  font-size: 2rem;
-  font-weight: 700;
-  color: #d47b91;
-  margin: 2rem 0 1rem;
-  font-family: 'Poppins', sans-serif;
-}
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
-  padding: 0 2rem 2rem;
-}
-
-.card {
-  background: #fff;
-  border-radius: 15px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  overflow: hidden;
-  text-align: center;
+  color: var(--blanco);
+  font-weight: 500;
   transition: all 0.3s ease;
 }
 
+.hero a:hover {
+  background-color: var(--rosa);
+}
+
+/* ===============================
+PRODUCTOS
+=============================== */
+.productos {
+  padding: 4rem 8%;
+}
+
+.titulo {
+  text-align: center;
+  font-family: "Playfair Display", serif;
+  font-size: 2rem;
+  color: var(--dorado);
+  margin-bottom: 2.5rem;
+}
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.card {
+  background-color: var(--blanco);
+  border-radius: 15px;
+  overflow: hidden;
+  max-width: 350px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
 .card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
 }
 
 .card img {
@@ -437,23 +165,23 @@ margin-top: 3rem;
 
 .card-info {
   padding: 1rem;
+  text-align: center;
 }
 
 .card-info h4 {
+  font-weight: 600;
   color: #444;
   margin-bottom: 0.5rem;
-  font-weight: 600;
 }
 
 .card-info p {
-  font-size: 0.9rem;
   color: #777;
   margin-bottom: 1rem;
 }
 
 .btn-agregar {
-  background: #e58fa6;
-  color: white;
+  background-color: var(--dorado);
+  color: var(--blanco);
   border: none;
   border-radius: 8px;
   padding: 0.6rem 1rem;
@@ -463,70 +191,28 @@ margin-top: 3rem;
 }
 
 .btn-agregar:hover {
-  background: #d0748b
-}
-/* ==== ESTILO PARA IMÁGENES DE PRODUCTOS ==== */
-.productos .card img {
-  width: 100%;
-  height: 250px; /* puedes ajustar el alto: 200px o 300px si prefieres */
-  object-fit: cover; /* recorta la imagen sin deformarla */
-  border-top-left-radius: 15px;
-  border-top-right-radius: 15px;
-  transition: transform 0.3s ease;
+  background-color: var(--rosa);
 }
 
-.productos .card img:hover {
-  transform: scale(1.05);
-}
-
-/* Ajuste general de las tarjetas */
-.productos .card {
-  background-color: #fff;
-  border-radius: 15px;
-  overflow: hidden;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  max-width: 350px;
-  margin: 15px auto;
-}
-
-.productos .card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-}
-
-.productos .grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 25px;
-}
-/* Carrusel----------*/
+/* ===============================
+CARRUSEL
+=============================== */
 .carrusel {
   position: relative;
   width: 100%;
-  max-width: 100%;
-  margin: 0;
   overflow: hidden;
-  border-radius: 0;
-  background-color: #fcefee;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+  background-color: var(--rosa-suave);
 }
 
-/* contenedor que las guarda todas */
 .carrusel-container {
   display: flex;
   transition: transform 0.5s ease-in-out;
-  width: 100%;
 }
 
-/* imagen */
 .slide {
   min-width: 100%;
-  box-sizing: border-box;
 }
 
-/* ajuste del tamaño dentro del contenedor */
 .slide img {
   width: 100%;
   height: 450px;
@@ -534,100 +220,80 @@ margin-top: 3rem;
   display: block;
 }
 
-/* botones del carrusel */
 .anterior, .siguiente {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
   background-color: rgba(255,255,255,0.7);
   border: none;
-  color: #d47b91;
+  color: var(--rosa);
   padding: 10px;
   border-radius: 50%;
-  cursor: pointer;
   font-size: 2rem;
-  transition: background 0.3s, transform 0.3s;
+  cursor: pointer;
+  transition: background 0.3s;
 }
 
-/* movimiento con el mouse */
 .anterior:hover, .siguiente:hover {
-  background-color: #f3c8c2;
-}
-
-/* posiciones de los botones */
-.anterior {
-  left: 10px;
-}
-
-.siguiente { 
-  right: 10px;
-}
-
-
-/* === CONTACTO === */
-.contacto {
-  background-color: var(--fondo);
-  padding: 1.2rem 5%;
-  text-align: center;
-  display: flex;
-  box-shadow: 0 2px 8px;
-  justify-content: space-between;
-  position: sticky;
-  top:0;
-  z-index: 100;
-}
-
-.titulo-contacto {
-  font-family: "Playfair Display", serif;
-  color: var(--dorado);
-  font-size: 2.3rem;
-  margin-bottom: 1rem;
-}
-
-.texto-contacto {
-  color: var(--texto);
-  font-size: 1rem;
-  margin-bottom: 2rem;
-}
-
-.formulario-contacto {
-  max-width: 600px;
-  margin: 0 auto;
-  text-align: left;
-  background-color: var(--blanco);
-  border: 1px solid var(--rosa-suave);
-}
-
-.formulario-contacto .form-label {
-  color: var(--texto);
-  font-weight: 600;
-}
-
-.formulario-contacto .form-control {
-  border: 1px solid #f3c8c2;
-  border-radius: 10px;
-  padding: 10px;
-}
-
-.formulario-contacto .form-control:focus {
-  border-color: var(--dorado);
-  box-shadow: 0 0 5px rgba(198, 166, 100, 0.4);
-}
-
-.btn-enviar {
-  display: block;
-  width: 100%;
-  background-color: var(--rosa);
-  color: var(--blanco);
-  padding: 12px;
-  border: none;
-  border-radius: 10px;
-  font-weight: 600;
-  transition: all 0.3s ease;
-}
-
-.btn-enviar:hover {
   background-color: var(--dorado);
+}
+
+.anterior { left: 10px; }
+.siguiente { right: 10px; }
+
+/* ===============================
+CARRITO
+=============================== */
+.carrito {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 350px;
+  height: 100%;
+  background: var(--fondo);
+  box-shadow: -2px 0 10px rgba(0,0,0,0.15);
+  transform: translateX(100%);
+  transition: transform 0.4s ease;
+  z-index: 2000;
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+  overflow-y: auto;
+  border-left: 3px solid var(--rosa);
+}
+
+.carrito.visible { transform: translateX(0); }
+
+.overlay {
+  position: fixed;
+  top:0; left:0;
+  width:100%; height:100%;
+  background: rgba(0,0,0,0.4);
+  opacity:0; visibility:hidden;
+  transition: opacity 0.4s ease;
+  z-index: 1500;
+}
+
+.overlay.activo { opacity:1; visibility: visible; }
+
+#cerrarCarrito {
+  background:none;
+  border:none;
+  font-size:1.5rem;
+  cursor:pointer;
+  align-self: flex-end;
+}
+
+/* ===============================
+PIE DE PÁGINA
+=============================== */
+footer {
+  background-color: var(--rosa-suave);
+  text-align: center;
+  padding: 2rem 0;
+  color: var(--texto);
+  font-size: 0.9rem;
+  margin-top: 3rem;
 }
 
 
