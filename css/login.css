@@ -1,1 +1,68 @@
+/* ======= LOGIN ======= */
+.login-container {
+  max-width: 600px;
+  margin: 60px auto;
+  background-color: #fcefee;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  text-align: center;
+}
 
+.login-container h2 {
+  font-family: "Playfair Display", serif;
+  color: #d47b91;
+  margin-bottom: 1rem;
+}
+
+/* contenedor de los dos campos lado a lado */
+.form-row {
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+}
+
+.form-row .campo {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+/* estilos generales de formulario */
+.form-login {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.form-login label {
+  font-weight: 500;
+  color: #555;
+}
+
+.form-login input {
+  padding: 0.7rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  outline: none;
+}
+
+.form-login input:focus {
+  border-color: #d47b91;
+  box-shadow: 0 0 5px rgba(212,123,145,0.3);
+}
+
+.btn-login {
+  background-color: #d47b91;
+  color: white;
+  border: none;
+  padding: 0.8rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.btn-login:hover {
+  background-color: #c06f84;
+}
