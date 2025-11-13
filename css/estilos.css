@@ -101,11 +101,8 @@ color: var(--rosa);
 font-size: 1.5rem;
 cursor: pointer;
 }
-/* ==========================================
-   🌸 MEJORA VISUAL DEL ENCABEZADO
-   Agrega animaciones y efectos hover en los enlaces del menú
-   ========================================== */
-nav a {
+/* 🌸 EFECTO DE INTERACCIÓN EN MENÚ SUPERIOR */
+.navbar nav a {
   position: relative;
   text-decoration: none;
   color: var(--texto);
@@ -113,7 +110,7 @@ nav a {
   transition: color 0.3s ease;
 }
 
-nav a::after {
+.navbar nav a::after {
   content: "";
   position: absolute;
   left: 0;
@@ -124,16 +121,16 @@ nav a::after {
   transition: width 0.3s ease;
 }
 
-nav a:hover::after {
+.navbar nav a:hover::after {
   width: 100%;
 }
 
-nav a:hover {
+.navbar nav a:hover {
   color: var(--rosa);
 }
 
-header:hover {
-  box-shadow: 0 4px 14px rgba(0,0,0,0.1);
+.navbar:hover {
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
   transition: box-shadow 0.3s ease;
 }
 
@@ -630,6 +627,7 @@ margin-top: 3rem;
 .btn-enviar:hover {
   background-color: var(--dorado);
 }
+
 
 
 
