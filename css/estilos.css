@@ -31,7 +31,10 @@ box-sizing: border-box;
 }
 
 
-
+/* 🎨 VARIABLES DE COLOR GLOBALES */
+:root {
+  --rosa: #e8a4c9;
+  --texto: #333;
 body {
 background-color: var(--fondo);
 color: var(--texto);
@@ -627,6 +630,7 @@ margin-top: 3rem;
 .btn-enviar:hover {
   background-color: var(--dorado);
 }
+
 
 
 
