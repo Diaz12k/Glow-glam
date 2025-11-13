@@ -536,16 +536,6 @@ margin-top: 3rem;
   right: 10px;
 }
 
-/*Animaciones y transiciones suaves*/
-.fade-in {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
-}
-.fade-in.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
 
 /* === CONTACTO === */
 .contacto {
@@ -606,6 +596,7 @@ margin-top: 3rem;
 .btn-enviar:hover {
   background-color: var(--dorado);
 }
+
 
 
 
