@@ -1,1 +1,76 @@
+/* ======================================================
+   ESTILOS - PÁGINA DE PRODUCTOS
+   ====================================================== */
 
+/* Contenedor principal */
+.productos-page {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.productos-page h1 {
+  font-size: 2.2rem;
+  margin-bottom: 40px;
+  color: var(--texto);
+}
+
+/* Grid de productos */
+.grid-productos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+  justify-items: center;
+}
+
+/* Tarjetas de producto */
+.card-producto {
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px var(--sombra);
+  padding: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+}
+
+.card-producto:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px var(--sombra);
+}
+
+.card-producto img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 15px;
+}
+
+.card-producto h3 {
+  font-size: 1.2rem;
+  color: var(--texto);
+  margin-bottom: 8px;
+}
+
+.card-producto p {
+  color: var(--gris);
+  margin-bottom: 12px;
+}
+
+.card-producto button {
+  background-color: var(--rosa);
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.card-producto button:hover {
+  background-color: var(--rosa-claro);
+  color: var(--texto);
+}
+
+/* ======================================================
+   FIN PRODUCTOS
+   ====================================================== */
