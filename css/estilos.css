@@ -512,10 +512,10 @@ margin-top: 3rem;
 .carrusel {
   position: relative;
   width: 100%;
-  max-width: 900px;
-  margin: 40px auto;
+  max-width: 100%;
+  margin: 0 auto;
   overflow: hidden;
-  border-radius: 20px;
+  border-radius: 0;
   background-color: #fcefee;
   box-shadow: 0 5px 20px rgba(0,0,0,0.1);
 }
@@ -636,6 +636,7 @@ margin-top: 3rem;
 .btn-enviar:hover {
   background-color: var(--dorado);
 }
+
 
 
 
