@@ -513,7 +513,7 @@ margin-top: 3rem;
   position: relative;
   width: 100%;
   max-width: 100%;
-  margin: 0 auto;
+  margin: 0;
   overflow: hidden;
   border-radius: 0;
   background-color: #fcefee;
@@ -636,6 +636,7 @@ margin-top: 3rem;
 .btn-enviar:hover {
   background-color: var(--dorado);
 }
+
 
 
 
