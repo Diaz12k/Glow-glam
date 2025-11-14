@@ -25,6 +25,25 @@ body {
   color: var(--texto);
   overflow-x: hidden;
 }
+body {
+  position: relative;
+  margin:0;
+}
+body:: before {
+  content:"";
+  position:fixed;
+  top:0;
+  left: 0;
+  width:100%
+  height: 100%
+  background-image: url("img/FONDO.png");
+  background-repeat: repeat;
+  background-size: 300px;
+  opacity: 0.20;
+  pointer-events: none;
+  z-index:-1;
+}
+  
 
 /* ===============================
 NAVBAR
@@ -295,6 +314,7 @@ footer {
   font-size: 0.9rem;
   margin-top: 3rem;
 }
+
 
 
 
