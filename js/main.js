@@ -1,124 +1,139 @@
-// =====================
-// ELEMENTOS
-// =====================
-const carrito = document.getElementById('carrito');
-const btnCarrito = document.querySelector('.cart');
-const listaCarrito = document.getElementById('lista-carrito');
-const totalCarrito = document.querySelector('.total');
-const btnVaciar = document.querySelector('.btn-vaciar');
-const btnCerrarCarrito = document.getElementById('cerrarCarrito');
-const overlay = document.getElementById('overlay');
+// ===============================
+// ABRIR / CERRAR CARRITO
+// ===============================
+const btnCarrito = document.getElementById("btnCarrito");
+const carrito = document.getElementById("carrito");
+const cerrarCarrito = document.getElementById("cerrarCarrito");
+const overlay = document.getElementById("overlay");
 
-let productosEnCarrito = [];
-
-// =====================
-// MOSTRAR / OCULTAR
-// =====================
-btnCarrito.addEventListener('click', () => {
-  carrito.classList.toggle('visible');
-  overlay.classList.toggle('activo');
+btnCarrito.addEventListener("click", () => {
+    carrito.classList.add("visible");
+    overlay.classList.add("activo");
 });
 
-if (btnCerrarCarrito) {
-  btnCerrarCarrito.addEventListener('click', () => {
-    carrito.classList.remove('visible');
-    overlay.classList.remove('activo');
-  });
+cerrarCarrito.addEventListener("click", () => {
+    carrito.classList.remove("visible");
+    overlay.classList.remove("activo");
+});
+
+overlay.addEventListener("click", () => {
+    carrito.classList.remove("visible");
+    overlay.classList.remove("activo");
+});
+
+// ===============================
+// LISTA DEL CARRITO
+// ===============================
+let itemsCarrito = [];
+const listaCarrito = document.getElementById("lista-carrito");
+const totalCarrito = document.querySelector(".total");
+const btnVaciar = document.querySelector(".btn-vaciar");
+
+// ===============================
+// CAPTURAR PRODUCTOS DEL HTML
+// ===============================
+document.querySelectorAll(".btn-agregar").forEach(boton => {
+    boton.addEventListener("click", e => {
+        const card = e.target.closest(".card");
+        
+        const nombre = card.querySelector("h4").textContent;
+        const precioTexto = card.querySelector("p").textContent.replace("$","").replace(".","").trim();
+        const precio = parseInt(precioTexto);
+        const imagen = card.querySelector("img").src;
+
+        agregarAlCarrito(nombre, precio, imagen);
+    });
+});
+
+// ===============================
+// AGREGAR PRODUCTO
+// ===============================
+function agregarAlCarrito(nombre, precio, imagen) {
+    const existe = itemsCarrito.find(item => item.nombre === nombre);
+
+    if (existe) {
+        existe.cantidad++;
+    } else {
+        itemsCarrito.push({
+            nombre,
+            precio,
+            imagen,
+            cantidad: 1
+        });
+    }
+
+    actualizarCarrito();
 }
 
-overlay.addEventListener('click', () => {
-  carrito.classList.remove('visible');
-  overlay.classList.remove('activo');
-});
-
-// =====================
-// AGREGAR PRODUCTOS
-// =====================
-document.querySelectorAll('.btn-agregar').forEach(btn => {
-  btn.addEventListener('click', (e) => {
-    const card = e.target.closest('.card');
-
-    const nombre = card.querySelector('h4').textContent;
-    const precioTexto = card.querySelector('p').textContent;
-    const imgSrc = card.querySelector('img').getAttribute('src');
-
-    const precio = parseFloat(precioTexto.replace('$', '').replace(',', '').trim());
-
-    agregarProductoAlCarrito({ nombre, precio, imgSrc });
-  });
-});
-
-function agregarProductoAlCarrito(producto) {
-  const existe = productosEnCarrito.find(p => p.nombre === producto.nombre);
-
-  if (existe) {
-    existe.cantidad++;
-  } else {
-    productosEnCarrito.push({ ...producto, cantidad: 1 });
-  }
-
-  actualizarCarritoUI();
-}
-
-// =====================
+// ===============================
 // ACTUALIZAR CARRITO
-// =====================
-function actualizarCarritoUI() {
-  listaCarrito.innerHTML = '';
+// ===============================
+function actualizarCarrito() {
+    listaCarrito.innerHTML = "";
 
-  productosEnCarrito.forEach((producto, index) => {
-    const item = document.createElement('div');
-    item.classList.add('carrito-item');
+    itemsCarrito.forEach((item, index) => {
+        const li = document.createElement("li");
+        li.classList.add("item-carrito");
 
-    item.innerHTML = `
-      <img src="${producto.imgSrc}" alt="producto">
-      <div class="info">
-        <p>${producto.nombre}</p>
-        <span>$${(producto.precio * producto.cantidad).toLocaleString()}</span>
-      </div>
-      <div class="cantidades">
-        <button class="btn-restar">-</button>
-        <span>${producto.cantidad}</span>
-        <button class="btn-sumar">+</button>
-      </div>
-      <button class="btn-eliminar">✕</button>
-    `;
+        li.innerHTML = `
+            <img src="${item.imagen}" class="img-carrito">
+            
+            <div class="detalle">
+                <span class="nombre">${item.nombre}</span>
+                <span class="precio">$${item.precio.toLocaleString()}</span>
+            </div>
 
-    // BOTÓN SUMAR
-    item.querySelector('.btn-sumar').addEventListener('click', () => {
-      producto.cantidad++;
-      actualizarCarritoUI();
+            <div class="cantidad">
+                <button class="menos">-</button>
+                <span>${item.cantidad}</span>
+                <button class="mas">+</button>
+            </div>
+
+            <button class="btn-eliminar">×</button>
+        `;
+
+        // Botón eliminar
+        li.querySelector(".btn-eliminar").addEventListener("click", () => {
+            itemsCarrito.splice(index, 1);
+            actualizarCarrito();
+        });
+
+        // Botón +
+        li.querySelector(".mas").addEventListener("click", () => {
+            item.cantidad++;
+            actualizarCarrito();
+        });
+
+        // Botón -
+        li.querySelector(".menos").addEventListener("click", () => {
+            if (item.cantidad > 1) {
+                item.cantidad--;
+            } else {
+                itemsCarrito.splice(index, 1);
+            }
+            actualizarCarrito();
+        });
+
+        listaCarrito.appendChild(li);
     });
 
-    // BOTÓN RESTAR
-    item.querySelector('.btn-restar').addEventListener('click', () => {
-      if (producto.cantidad > 1) {
-        producto.cantidad--;
-      } else {
-        productosEnCarrito.splice(index, 1);
-      }
-      actualizarCarritoUI();
-    });
-
-    // BOTÓN ELIMINAR
-    item.querySelector('.btn-eliminar').addEventListener('click', () => {
-      productosEnCarrito.splice(index, 1);
-      actualizarCarritoUI();
-    });
-
-    listaCarrito.appendChild(item);
-  });
-
-  // TOTAL
-  const total = productosEnCarrito.reduce((acc, p) => acc + p.precio * p.cantidad, 0);
-  totalCarrito.textContent = `Total: $${total.toLocaleString()}`;
+    calcularTotal();
 }
 
-// =====================
+// ===============================
+// TOTAL DEL CARRITO
+// ===============================
+function calcularTotal() {
+    const total = itemsCarrito.reduce((acc, item) => acc + item.precio * item.cantidad, 0);
+    totalCarrito.textContent = `Total: $${total.toLocaleString()}`;
+}
+
+// ===============================
 // VACIAR CARRITO
-// =====================
-btnVaciar.addEventListener('click', () => {
-  productosEnCarrito = [];
-  actualizarCarritoUI();
+// ===============================
+btnVaciar.addEventListener("click", () => {
+    itemsCarrito = [];
+    actualizarCarrito();
 });
+
 
