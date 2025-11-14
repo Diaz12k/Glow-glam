@@ -215,7 +215,7 @@ CARRUSEL
 
 .slide img {
   width: 100%;
-  height: 450px;
+  height: auto;
   object-fit: cover;
   display: block;
 }
@@ -295,6 +295,7 @@ footer {
   font-size: 0.9rem;
   margin-top: 3rem;
 }
+
 
 
 
