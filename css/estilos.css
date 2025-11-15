@@ -330,12 +330,20 @@ LISTA DE PRODUCTOS EN CARRITO
   position: relative;
 }
 
-/* Imagen del producto */
+/* Imagen dentro del carrito */
 .img-carrito {
-  width: 65px;
-  height: 65px;
+  width: 60px;
+  height: 60px;
   object-fit: cover;
   border-radius: 8px;
+  flex-shrink: 0;
+}
+/* Asegurar que el item no crezca */
+.item-carrito {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px;
 }
 
 /* Información */
@@ -449,6 +457,7 @@ footer {
   font-size: 0.9rem;
   margin-top: 3rem;
 }
+
 
 
 
