@@ -412,7 +412,36 @@ LISTA DE PRODUCTOS
   border: none;
   cursor: pointer;
 }
-
+.btn-checkout {
+  margin-top: 15px;
+  background: #ff4d4d;
+  color: #fff;
+  padding: 10px;
+  border-radius: 9px;
+  border: none;
+  cursor: pointer;
+}
+.btn-secundario {
+  background-color: var(--dorado);
+  color: var(--blanco);
+  border: none;
+  border-radius: 8px;
+  padding: 0.6rem 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.btn-enviar {
+  background-color: var(--dorado);
+  color: var(--blanco);
+  border: none;
+  border-radius: 8px;
+  padding: 0.6rem 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+  
 /* ===============================
 PIE DE PÁGINA
 =============================== */
@@ -424,6 +453,10 @@ footer {
   font-size: 0.9rem;
   margin-top: 3rem;
 }
+.redes {
+  position: fix:
+  
+  
 
 /* ===============================
 DETALLE DEL PRODUCTO
@@ -435,7 +468,7 @@ DETALLE DEL PRODUCTO
   flex-direction: column;
   align-items: center;
   gap: 2rem;
-  font-family: "Poppins", sans-serif;
+  sans-serif: 2rem;
 }
 
 /*tarjeta de detalle*/
@@ -528,6 +561,7 @@ DETALLE DEL PRODUCTO
     text-align: left;
   }
 }
+
 
 
 
