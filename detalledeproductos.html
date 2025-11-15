@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Detalle del Producto | Glow & Glam</title>
+
+  <link rel="stylesheet" href="css/estilos.css" />
+  <link rel="stylesheet" href="css/productos.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
+
+<body>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="logo">Glow & Glam</div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="productos.html">Productos</a></li>
+        <li><a href="nosotros.html">Nosotros</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
+
+    <div class="cart" id="btnCarrito" style="cursor:pointer;">🛒</div>
+  </header>
+
+  <!-- BOTÓN VOLVER -->
+  <div style="text-align:center;">
+    <a href="productos.html" class="btn-volver">← Volver a productos</a>
+  </div>
+
+  <!-- CONTENEDOR DEL DETALLE -->
+  <div class="detalle-container">
+    <img id="producto-img" src="" alt="producto" />
+
+    <div class="detalle-info">
+      <h2 id="producto-nombre">Cargando...</h2>
+      <p id="producto-precio"></p>
+      <p id="producto-desc"></p>
+
+      <button class="btn-comprar">Agregar al carrito</button>
+    </div>
+  </div>
+
+  <!-- ================= JS PARA CARGAR EL PRODUCTO ================= -->
+  <script>
+    const productos = {
+      1: {
+        nombre: "Rare Beauty Blush",
+        precio: "$140.000",
+        desc: "Blush líquido de alta pigmentación en tonos Rosado, Palo de Rosa y Rojo claro.",
+        img: "img/foto6.carru.jpeg"
+      },
+      2: {
+        nombre: "Corrector líquido hidratante Rare Beauty - 75ml",
+        precio: "$130.000",
+        desc: "Corrector de alta cobertura y acabado natural.",
+        img: "img/productos/rare beuty.jpg"
+      },
+      3: {
+        nombre: "Iluminador Rare Beauty",
+        precio: "$60.000",
+        desc: "Iluminador líquido de efecto glow natural.",
+        img: "img/productos/iluminador montoc.jpeg"
+      },
+      4: {
+        nombre: "Base Montoc - 30ml",
+        precio: "$60.000",
+        desc: "Base de cobertura media-alta con acabado mate.",
+        img: "img/productos/base montoc.jpeg"
+      },
+      5: {
+        nombre: "Polvo Suelto Montoc Soft - 10g",
+        precio: "$35.000",
+        desc: "Polvo traslúcido suave para sellar maquillaje.",
+        img: "img/productos/polvotranslucido.jpeg"
+      },
+      6: {
+        nombre: "Polvo Compacto Soft Oil Control",
+        precio: "$25.000",
+        desc: "Polvo compacto en gel para controlar brillo.",
+        img: "img/productos/polvo compacto.jpeg"
+      },
+      7: {
+        nombre: "Rubor Líquido Nostalgic Montoc",
+        precio: "$30.900",
+        desc: "Rubor líquido de larga duración y textura suave.",
+        img: "img/productos/rubormontoc.jpeg"
+      },
+      8: {
+        nombre: "Rubor en Crema Nostalgic",
+        precio: "$35.900",
+        desc: "Rubor en crema de acabado natural.",
+        img: "img/productos/ruborencrema.jpeg"
+      },
+      9: {
+        nombre: "Bronzer Drops + Brocha",
+        precio: "$53.000",
+        desc: "Contorno líquido con brocha incluida.",
+        img: "img/productos/brozer.jpeg"
+      },
+      10: {
+        nombre: "Bronzer Hello Beach Montoc",
+        precio: "$37.100",
+        desc: "Bronzer en polvo de acabado playero.",
+        img: "img/postre3.jpg"
+      },
+      11: {
+        nombre: "Brocha para Rubor y Contorno",
+        precio: "$16.000",
+        desc: "Brocha suave ideal para aplicar productos en polvo.",
+        img: "img/postre3.jpg"
+      },
+      12: {
+        nombre: "Brocha para Base",
+        precio: "$24.000",
+        desc: "Brocha plana para aplicación uniforme de base.",
+        img: "img/postre3.jpg"
+      },
+      13: {
+        nombre: "Brocha para Rubor en Polvo",
+        precio: "$16.200",
+        desc: "Brocha redonda ideal para rubores en polvo.",
+        img: "img/postre3.jpg"
+      },
+      14: {
+        nombre: "Brocha para Rubor en Crema",
+        precio: "$22.000",
+        desc: "Brocha sintética para rubores en crema.",
+        img: "img/postre3.jpg"
+      },
+      15: {
+        nombre: "Blush Plum Atenea",
+        precio: "$36.500",
+        desc: "Rubor atenea tono plum.",
+        img: "img/postre3.jpg"
+      },
+      16: {
+        nombre: "Polvo Suelto Mini Atenea - 9g",
+        precio: "$20.700",
+        desc: "Mini polvo suelto ideal para retoques.",
+        img: "img/postre3.jpg"
+      }
+    };
+
+    // Obtener ID de la URL
+    const params = new URLSearchParams(window.location.search);
+    const id = params.get("id");
+
+    // Llenar la información en la página
+    const prod = productos[id];
+
+    if (prod) {
+      document.getElementById("producto-img").src = prod.img;
+      document.getElementById("producto-nombre").textContent = prod.nombre;
+      document.getElementById("producto-precio").textContent = prod.precio;
+      document.getElementById("producto-desc").textContent = prod.desc;
+    } else {
+      document.getElementById("producto-nombre").textContent = "Producto no encontrado";
+    }
+  </script>
+
+</body>
+</html>
