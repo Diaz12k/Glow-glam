@@ -427,6 +427,8 @@ LISTA DE PRODUCTOS
   border: none;
   border-radius: 8px;
   padding: 0.6rem 1rem;
+  margin: 3px;
+  text-decoration: none;
   font-weight: 600;
   cursor: pointer;
   transition: background 0.3s;
@@ -561,6 +563,7 @@ DETALLE DEL PRODUCTO
     text-align: left;
   }
 }
+
 
 
 
