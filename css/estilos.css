@@ -265,7 +265,7 @@ CARRITO LATERAL
   position: fixed;
   top: 0;
   right: 0;
-  width: 360px;
+  width: 350px;
   height: 100%;
   background: #fff;
   box-shadow: -3px 0 12px rgba(0,0,0,0.2);
@@ -297,7 +297,6 @@ CARRITO LATERAL
   opacity:1; visibility:visible;
 }
 
-/* Botón cerrar */
 #cerrarCarrito {
   background:none;
   border:none;
@@ -307,9 +306,8 @@ CARRITO LATERAL
   margin-bottom: 1rem;
 }
 
-
 /* ===============================
-LISTA DE PRODUCTOS EN CARRITO
+LISTA DE PRODUCTOS
 =============================== */
 #lista-carrito {
   list-style: none;
@@ -317,7 +315,7 @@ LISTA DE PRODUCTOS EN CARRITO
   margin: 0;
 }
 
-/* Cada item */
+/* ITEM */
 .item-carrito {
   display: flex;
   align-items: center;
@@ -327,26 +325,18 @@ LISTA DE PRODUCTOS EN CARRITO
   border-radius: 10px;
   margin-bottom: 12px;
   box-shadow: 0 2px 5px rgba(0,0,0,0.07);
-  position: relative;
 }
 
-/* Imagen dentro del carrito */
+/* IMAGEN */
 .img-carrito {
-  width: 60px;
-  height: 60px;
+  width: 70px;
+  height: 70px;
   object-fit: cover;
-  border-radius: 8px;
-  flex-shrink: 0;
-}
-/* Asegurar que el item no crezca */
-.item-carrito {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding: 10px;
+  border-radius: 10px;
+  flex-shrink: 0;   /* <-- evita que crezca */
 }
 
-/* Información */
+/* INFO */
 .detalle {
   flex: 1;
   display: flex;
@@ -365,10 +355,7 @@ LISTA DE PRODUCTOS EN CARRITO
   font-size: 0.9rem;
 }
 
-
-/* ===============================
-BOTONES DE CANTIDAD
-=============================== */
+/* CANTIDAD */
 .cantidad {
   display: flex;
   align-items: center;
@@ -384,11 +371,6 @@ BOTONES DE CANTIDAD
   background: var(--rosa);
   color: #fff;
   font-size: 1rem;
-  transition: 0.2s;
-}
-
-.cantidad button:hover {
-  background: #d94877;
 }
 
 .cantidad span {
@@ -397,10 +379,7 @@ BOTONES DE CANTIDAD
   text-align: center;
 }
 
-
-/* ===============================
-BOTÓN ELIMINAR ITEM
-=============================== */
+/* ELIMINAR */
 .btn-eliminar {
   background: #ff4d4d;
   border: none;
@@ -410,17 +389,13 @@ BOTÓN ELIMINAR ITEM
   height: 28px;
   border-radius: 8px;
   cursor: pointer;
-  transition: 0.2s;
 }
 
 .btn-eliminar:hover {
   background: #d93636;
 }
 
-
-/* ===============================
-TOTAL Y BOTÓN VACIAR
-=============================== */
+/* TOTAL */
 .total {
   margin-top: 20px;
   font-size: 1.3rem;
@@ -436,15 +411,7 @@ TOTAL Y BOTÓN VACIAR
   border-radius: 9px;
   border: none;
   cursor: pointer;
-  font-weight: bold;
-  transition: 0.3s;
 }
-
-.btn-vaciar:hover {
-  background: #d93636;
-}
-
-
 
 /* ===============================
 PIE DE PÁGINA
@@ -457,6 +424,7 @@ footer {
   font-size: 0.9rem;
   margin-top: 3rem;
 }
+
 
 
 
