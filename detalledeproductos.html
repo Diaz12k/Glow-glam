@@ -46,6 +46,12 @@
 
   <!-- ================= JS PARA CARGAR EL PRODUCTO ================= -->
   <script>
+    
+     // Obtener ID de la URL
+    const params = new URLSearchParams(window.location.search);
+    const id = params.get("id");
+    console.log("ID recibido:", id);
+    
     const productos = {
       1: {
         nombre: "Rare Beauty Blush",
@@ -135,19 +141,17 @@
         nombre: "Blush Plum Atenea",
         precio: "$36.500",
         desc: "Rubor atenea tono plum.",
-        img: "img/postre3.jpg"
+        img: "img/productos/blush de atenea.jpeg"
       },
       16: {
         nombre: "Polvo Suelto Mini Atenea - 9g",
         precio: "$20.700",
         desc: "Mini polvo suelto ideal para retoques.",
-        img: "img/postre3.jpg"
+        img: "img/productos/polvo translucidoateneamini.jpeg"
       }
     };
 
-    // Obtener ID de la URL
-    const params = new URLSearchParams(window.location.search);
-    const id = params.get("id");
+   
 
     // Llenar la información en la página
     const prod = productos[id];
