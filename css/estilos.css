@@ -483,7 +483,7 @@ DETALLE DEL PRODUCTO
   margin-bottom: 1rem;
 }
 
-.btn-agregar {
+.btn-comprar {
   background-color: var(--dorado);
   color: var(--blanco);
   border: none;
@@ -494,7 +494,7 @@ DETALLE DEL PRODUCTO
   transition: background 0.3s;
 }
 
-.btn-agregar:hover {
+.btn-comprar:hover {
   background-color: var(--rosa);
 }
 
@@ -528,6 +528,7 @@ DETALLE DEL PRODUCTO
     text-align: left;
   }
 }
+
 
 
 
