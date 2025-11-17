@@ -459,92 +459,71 @@ footer {
   position: fix:
   
   
-
-/* ===============================
-DETALLE DEL PRODUCTO
-=============================== */
+/* ====== DETALLE DEL PRODUCTO ====== */
 
 .detalle-contenedor {
-  padding: 4rem 8%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 2rem;
+  max-width: 1100px;
+  margin: 140px auto 60px;
+  padding: 20px;
 }
 
 .detalle-card {
-  background-color: var(--blanco);
-  border-radius: 15px;
-  overflow: hidden;
-  max-width: 900px;
-  width: 100%;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-  padding-bottom: 2rem;  /* ← corregido */
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+  background: #fff;
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
-/* imagen */
 .detalle-card img {
-  width: 100%;
-  max-height: 380px;
-  object-fit: contain;
-  background-color: #f9f4f4;
+  width: 380px;
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
 }
 
 .detalle-info {
-  padding: 2rem;
-  text-align: center;
+  flex: 1;
 }
 
 .detalle-info h2 {
-  font-size: 1.8rem;
-  color: #444;
-  font-weight: 600;
-  margin-bottom: 0.8rem;
-  font-family: "Playfair Display", serif;
+  font-size: 28px;
+  margin-bottom: 10px;
 }
 
 .detalle-info p {
-  color: #777;
-  margin-bottom: 1.5rem;
-  line-height: 1.4;
-}
-
-.detalle-precio {
-  font-size: 1.4rem;
-  color: var(--dorado);
-  font-weight: 700;
-  margin-bottom: 1rem;
-}
-
-.btn-comprar {
-  background-color: var(--dorado);
-  color: var(--blanco);
-  border: none;
-  border-radius: 8px;
-  padding: 0.7rem 1.4rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: background 0.3s;
-}
-
-.btn-comprar:hover {
-  background-color: var(--rosa);
+  margin-bottom: 12px;
+  font-size: 16px;
 }
 
 .btn-volver {
-  background-color: var(--rosa);
-  color: var(--blanco);
-  padding: 0.6rem 1.2rem;
-  border-radius: 8px;
-  font-weight: 600;
+  display: inline-block;
+  margin-bottom: 20px;
+  font-size: 16px;
   text-decoration: none;
-  border: none;
-  cursor: pointer;
-  transition: background 0.3s;
+  color: #d7628a;
+  font-weight: 600;
 }
 
 .btn-volver:hover {
-  background-color: var(--dorado);
+  text-decoration: underline;
+}
+
+.btn-comprar {
+  background: #d7628a;
+  color: #fff;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-comprar:hover {
+  background: #b94e74;
 }
 
 /* ====== Responsive ====== */
@@ -555,8 +534,7 @@ DETALLE DEL PRODUCTO
   }
 
   .detalle-card img {
-    width: 50%;
-    max-height: 100%;
+    wix-height: 100%;
   }
 
   .detalle-info {
@@ -564,6 +542,7 @@ DETALLE DEL PRODUCTO
     width: 50%;
   }
 }
+
 
 
 
