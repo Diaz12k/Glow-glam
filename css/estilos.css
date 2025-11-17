@@ -470,10 +470,8 @@ DETALLE DEL PRODUCTO
   flex-direction: column;
   align-items: center;
   gap: 2rem;
-  sans-serif: 2rem;
 }
 
-/*tarjeta de detalle*/
 .detalle-card {
   background-color: var(--blanco);
   border-radius: 15px;
@@ -481,10 +479,10 @@ DETALLE DEL PRODUCTO
   max-width: 900px;
   width: 100%;
   box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-  padding-buttom: 2 rem;
+  padding-bottom: 2rem;  /* ← corregido */
 }
 
-/* imagen*/
+/* imagen */
 .detalle-card img {
   width: 100%;
   max-height: 380px;
@@ -549,27 +547,24 @@ DETALLE DEL PRODUCTO
   background-color: var(--dorado);
 }
 
-  /**contactos**/
-  .titulo-contacto {
-    font-family:"Playfair Display";
-    color: var(--dorado--);
-  }
-
-
+/* ====== Responsive ====== */
 @media (min-width: 768px) {
   .detalle-card {
-    flex-wrap: nowrap;
+    display: flex;       
+    flex-direction: row; 
   }
 
   .detalle-card img {
     width: 50%;
-    max-height: auto;
+    max-height: 100%;
   }
 
   .detalle-info {
     text-align: left;
+    width: 50%;
   }
 }
+
 
 
 
