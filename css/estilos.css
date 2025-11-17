@@ -549,6 +549,9 @@ DETALLE DEL PRODUCTO
   background-color: var(--dorado);
 }
 
+  /**contactos**/
+
+
 @media (min-width: 768px) {
   .detalle-card {
     flex-wrap: nowrap;
@@ -563,6 +566,7 @@ DETALLE DEL PRODUCTO
     text-align: left;
   }
 }
+
 
 
 
