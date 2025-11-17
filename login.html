@@ -1,1 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>acceder | glow & glam </title>
+</head>
+<body>
+  <div class="contenedor">
+    <!--formulario login-->
+    <div id="login">
+      <h2> iniciar sesión</h2>
 
+      <form action="login.php" method="post">
+        <input type="email" name="email" placeholder="correo"required>
+        <input type="password" name="password" placeholder="contraseña" required>
+        <button tupe="submit">entrar</button>
+      </form>
+      <!-- si no tiene una cuenta-->
+      <p class="opcion" onclick="mostrarRegistro()"> ¿no tienes cuenta? registrate</p>
+    </div>
+
+    <!--formulario de registro-->
+    <div id="registro" class="oculto">
+      <h2> Crear Cuenta</h2>
+
+      <form action="register.php" method="POST">
+        <input type="text" name="Nombre" placeholder="Nombre Completo" required>
+        <input type="email" name="email" placeholder="correo" required>
+        <input type="password" name="password" placeholder="Contraseña" required>
+        <button type="submit"> Registrarme</button>
+      </form>
+
+      <p class="opcion" onclick="mostrarLogin()">¿Ya tienes cuenta? Iniciar Sesion</p>
+    </div>
+  </div>
+    
+      
+</body>
+</html>
