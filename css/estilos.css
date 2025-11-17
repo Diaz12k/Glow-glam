@@ -550,6 +550,10 @@ DETALLE DEL PRODUCTO
 }
 
   /**contactos**/
+  .titulo-contacto {
+    font-family:"Playfair Display";
+    color: var(--dorado--);
+  }
 
 
 @media (min-width: 768px) {
@@ -566,6 +570,7 @@ DETALLE DEL PRODUCTO
     text-align: left;
   }
 }
+
 
 
 
